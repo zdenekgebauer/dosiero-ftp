@@ -1,0 +1,13 @@
+parameters:
+    paths:
+        - ../src/
+    level: max
+    bootstrapFiles:
+        - ../vendor/autoload.php
+    excludes_analyse:
+        - ../vendor/
+    checkMissingIterableValueType: false
+    ignoreErrors:
+        - '#has invalid typehint type Dosiero\\#'
+        - '#on an unknown class Dosiero\\#'
+        - '#class Dosiero\\File not found#'

@@ -1,0 +1,21 @@
+{
+    "name": "zdenekgebauer/dosiero-ftp",
+    "description": "FTP storage for Dosiero",
+    "type": "library",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "Zdenek Gebauer",
+            "email": "zdenek.gebauer@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "zdenekgebauer/ftp-client": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DosieroFtp\\": "src/"
+        }
+    }
+}

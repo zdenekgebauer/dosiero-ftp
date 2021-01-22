@@ -1,0 +1,24 @@
+name: dosiero-ftp
+services:
+  appserver:
+    type: php:8.0
+    via: cli
+    webroot: .
+    xdebug: coverage
+    composer_version: 2-latest
+tooling:
+  php:
+    service: appserver
+  composer:
+    service: appserver
+  phpcs:
+    service: appserver
+    description: check cocing standards (PHP CodeSniffer)
+    cmd: php build/phpcs.phar --standard=PSR12 --report-file=build/reports/checkstyle.txt src
+  phpstan:
+    service: appserver
+    description: static analysis (PHPStan)
+    cmd: php build/phpstan.phar analyze -c build/phpstan.neon > build/reports/phpstan.txt
+events:
+  pre-start:
+    - appserver: composer install

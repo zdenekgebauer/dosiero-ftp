@@ -1,0 +1,8 @@
+# generally ignored files
+.idea/
+*.bak
+# local build settings
+/build/local.properties
+/build/reports/
+/vendor/
+/composer.lock
